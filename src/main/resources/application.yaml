@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/kb
+    username: postgres
+    password: postgres
+  ai:
+    dashscope:
+      api-key: ${DeepseekAPIKey}
+      embedding:
+        options:
+          model: text-embedding-v3
+          dimensions: 1024
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        dimensions: 1024
+        index-type: HNSW
